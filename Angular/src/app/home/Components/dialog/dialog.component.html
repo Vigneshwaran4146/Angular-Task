@@ -1,0 +1,30 @@
+ 
+<div class="dialog">
+  <div class="head"> Add Product Detail</div>
+  <form [formGroup]="product">
+    <div class="form-filed"> 
+       <div class="image_upload">
+      <div style=" display: flex;justify-content: center;">
+        <img src="assets/upload1.png" class="images-upload" width="100%" height="100%">
+        <input formControlName="image" type="file" name="file"  class="input_file"/>  
+      </div>
+       </div>
+      <mat-form-field  fxFlex="90%" appearance="outline">
+        <mat-label class="input">Product Name</mat-label>
+        <input matInput formControlName="name" data-control="productName">
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex="90%">
+        <mat-label class="input">Product Price</mat-label>
+        <input matInput formControlName="price" data-control="productName">
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex="90%">
+        <mat-label class="input">Product Avilability</mat-label>
+        <input matInput formControlName="avilability" data-control="productName">
+      </mat-form-field>
+    </div>
+  </form> 
+      <div class="buttons">
+        <button mat-raised-button (click)="cancel()" >cancel</button>
+      <button mat-raised-button  color="primary" class="save_btn">Save</button>
+      </div> 
+</div>

@@ -1,0 +1,42 @@
+<div class="product-list-section">
+  <div class="top-Nav">
+      <div class="all-products">All Products</div>
+     <div class="products-home">
+      <button  mat-raised-button color="primary"class="add-product" (click)="addProduct('add','addProduct')"><i class="fa-solid fa-plus"></i>Add Poducts</button>
+      <button  mat-raised-button class="Home" (click)="navigateTo('home')"><i class="fa-solid fa-house-chimney"></i>Back to Home</button>
+     </div>
+  </div>
+  <ng-container *ngIf="products" >
+    <div class="products"> 
+    <div class="product-card single-products" *ngFor="let product of products">
+      <img [src]="product.image" alt="{{product.name}}" class="product-image">
+      <div class="product-details">
+        <h2 class="product-name">{{product.name}}</h2>
+        <p class="product-price">{{product.price}}</p>
+        <div class="icons_button">
+          <button class="details" (click)="addProduct('edit','editProduct')"><i class="fa-solid fa-pen-to-square"></i></button>
+          <button class="details" (click)="addProduct('delete','deleteProduct')"> <i class="fa-solid fa-trash"></i></button>
+          <button class="details" (click)="navigateTo('productsdetails')"><i class="fa-solid fa-eye"></i></button>
+        </div>
+      </div>
+    </div>
+    </div>
+  <!-- <div class="products">
+    <div *ngFor="let product of products" class="single-products">
+      <div class="product-image">
+        <img [src]="product?.image" width="200px" height="250px" style="object-fit: contain;">
+      </div>
+      <div class="price_name">
+        <div class="name">{{product?.name}}</div>
+      <div class="price">{{product?.price}}</div> 
+      <button class="details"  (click)="navigateTo('productsdetails')"><i class="fa-solid fa-eye"></i>View details</button>
+      </div>
+    </div>
+  </div> -->
+  </ng-container>
+  <!-- <ng-container >
+    <div class="product_not">
+      No Products Avilable
+    </div>
+  </ng-container> -->
+</div>
