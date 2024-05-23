@@ -1,5 +1,5 @@
 <div class="backProducts">
-  <button mat-raised-button (click)="navigateTo('products')">Back To Products</button>
+  <button mat-raised-button (click)="navigateTo('products')"><mat-icon>arrow_back</mat-icon>Back To Products</button>
 </div>
 <div class="product-detail">
   <div class="image-side">
@@ -10,7 +10,10 @@
   </div>
   <div class="content-side">
     <div class="productName">{{singleProduct?.name | uppercase}}</div>
-    <div class="productPrice">{{singleProduct?.price | currency}}</div>
-    <button mat-raised-button class="cartbtn">Add to Cart</button>
+    <div class="productPrice">{{singleProduct?.price |currency :'INR'}}</div>
+    <div class="productPriceWord">({{singleProduct?.price | numberToWords |titlecase}})</div>
+    <div *ngIf="singleProduct?.description" style="font-size: 20px; font-weight: bolder;">Description:</div>
+    <div class="productDescription">{{singleProduct?.description}}</div>
+    <button mat-raised-button class="cartbtn"><mat-icon>shopping_cart</mat-icon>Add to Cart</button>
   </div>
 </div>

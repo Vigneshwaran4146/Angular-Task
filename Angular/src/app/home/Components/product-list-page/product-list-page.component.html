@@ -3,9 +3,9 @@
     <div class="all-products"><mat-icon class="cake-icon">cake</mat-icon> Cake Shop</div>
     <div class="products-home">
       <button mat-raised-button color="primary" class="add-product" (click)="openDialog('add',{})"><i
-          class="fa-solid fa-plus"></i>Add Poducts</button>
+          class="fa-solid fa-plus"></i><span class="span-small">Add Product</span></button>
       <button mat-raised-button class="Home" (click)="navigateTo('home',0)"><i
-          class="fa-solid fa-house-chimney"></i>Back to Home</button>
+          class="fa-solid fa-house-chimney"></i><span class="span-small">Back to Home</span></button>
     </div>
   </div>
   <ng-container *ngIf="products?.length">

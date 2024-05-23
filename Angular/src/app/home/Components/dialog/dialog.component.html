@@ -19,7 +19,6 @@
         <mat-label>Product Name</mat-label>
         <input matInput formControlName="name" data-control="productName">
         <mat-error *ngIf="product?.get('name')?.hasError('required')">Product Name is requried</mat-error>
-        <mat-error *ngIf="product?.get('name')?.hasError('maxlength')">Product Name is exceed max length</mat-error>
         <mat-error *ngIf="product?.get('name')?.hasError('pattern')">Product Name only allow alphabets</mat-error>
       </mat-form-field>
       <mat-form-field appearance="outline" fxFlex="90%">
@@ -27,18 +26,26 @@
         <input matInput formControlName="price" data-control="productName">
         <mat-error *ngIf="product?.get('price')?.hasError('pattern')">Product Price only allow Numbers</mat-error>
       </mat-form-field>
+      <mat-form-field color="primary"appearance="outline" >
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+        <mat-error *ngIf="product?.get('description')?.hasError('required')"> Description is required </mat-error>
+        <mat-error *ngIf="product?.get('description')?.hasError('maxlength')"> Description  exceed max length </mat-error>
+      </mat-form-field>
     </div>
   </form>
   <!--Conformation Dialog for Delete Product -->
-  <div *ngIf="(data?.operation=='delete')">
+  <div *ngIf="(data?.operation=='delete')" style="display: flex;">
     <img src="assets/sure.png" alt="conformation-image" height="200px" width="200px">
-    <div style="font-size: 20px;font-weight: 500;">
-      Are You Sure Want To Delete this Product?
+    <div class="delete-content"> 
+    <div class="delete-image"><img [src]="'http://localhost:3000'+data?.product?.image" style="width: 139px;height: 139px;object-fit: cover;"></div>
+      Are You Sure Want To Delete?
     </div>
   </div>
   <div class="buttons">
     <button mat-raised-button
-      (click)="dialogRef.close()">{{(data?.operation=='delete')?dialogChanges[2].cancel:dialogChanges[1].cancel }}</button>
+      (click)="dialogRef.close()">{{(data?.operation=='delete')?dialogChanges[2].cancel:dialogChanges[1].cancel
+      }}</button>
     <button mat-raised-button [color]="(data?.operation=='delete')?'warn':'primary'" class="save_btn"
       (click)="onUpload(data?.operation,data?.product?.id)">{{(data?.operation=='add')?dialogChanges[0].save:(data?.operation=='edit')?dialogChanges[1].save:'yes'}}</button>
   </div>

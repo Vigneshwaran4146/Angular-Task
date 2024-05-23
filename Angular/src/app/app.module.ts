@@ -17,7 +17,7 @@ import {  HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     HomeModule, 
     HttpClientModule
-  ], 
+  ],  
   providers: [],
   bootstrap: [AppComponent]
 })

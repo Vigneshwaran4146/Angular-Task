@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: row;
   width: 100%;
+  top: 45px;
+  position: relative;
 }
 
 .image-side {
@@ -9,12 +11,18 @@
   width: 50%;
   overflow: hidden;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .backProducts {
   margin-block: 10px;
   margin-inline-start: 10px;
+  position: fixed;
+  top: -13px;
+  padding: 10px;
+  z-index: 4;
+  width: 95%;
+  background-color: white;
 }
 
 .single-image {
@@ -25,10 +33,12 @@
 .content-side {
   width: 50%;
   padding: 20px;
+  padding-left: 0px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-family: cursive;
 }
 
 .productName {
@@ -36,7 +46,10 @@
   font-weight: 900;
   color: #571616;
   margin: 10px;
+  line-height: 1.5;
   padding: 10px;
+  padding-left: 0px;
+  margin-left: 0px;
 }
 
 .productPrice {
@@ -45,9 +58,50 @@
   color: black;
   padding: 10px;
   margin: 10px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  margin-left: 0px;
 }
 
 .cartbtn {
   background-color: #471111c9 !important;
   color: white !important;
+}
+.productDescription{
+  font-size: 17px;
+    font-weight: 500;
+    line-height: 1.5;
+    padding-block: 18px;
+}
+.productPriceWord{
+  font-size: 20px;
+    font-weight: 500;
+    color: black;
+    padding: 10px;
+    padding-top: 0px;
+    margin: 10px;
+    margin-top: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
+}
+@media screen and (max-width:750px) {
+  
+  .product-detail{
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    width: 145%;
+  }
+  .single-image{
+    width: 350px;
+    height: 250px;
+  }
+  .content-side{
+    padding: 0px;
+    
+  }
+  .productName{
+    padding:0px;
+    margin: 0px;
+    }
 }

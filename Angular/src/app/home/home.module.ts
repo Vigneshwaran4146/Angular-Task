@@ -5,7 +5,9 @@ import { ProductListPageComponent } from './Components/product-list-page/product
 import { ProductDetailsPageComponent } from './Components/product-details-page/product-details-page.component';
 import { MaterialsModule } from '../materials/materials.module';
 import { DialogComponent } from './Components/dialog/dialog.component';
-import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';  
+import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';   
+import { NumberToWordsPipe } from './pipes/number-to-words.pipe';
+import { ChangeBackgroundDirective } from './directives/change-background.directive';
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import { PageNotFoundComponent } from './Components/page-not-found/page-not-foun
     ProductDetailsPageComponent,
     DialogComponent,
     PageNotFoundComponent, 
+    NumberToWordsPipe, 
+    ChangeBackgroundDirective
   ],
   imports: [
     CommonModule,
