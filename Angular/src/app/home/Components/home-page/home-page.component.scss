@@ -7,7 +7,7 @@
   background-color: #c3a9ff;
 }
 
-.example-button-row {
+.button {
   display: table-cell;
   max-width: 600px;
 }
@@ -16,12 +16,10 @@
   visibility: hidden;
 }
 
-.example-button-row:hover {
-  .arrow {
-
+.button:hover {
+  .arrow { 
     visibility: hidden;
-  }
-
+  } 
   .arrow-right { 
     visibility: visible;
   }

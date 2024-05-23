@@ -1,41 +1,42 @@
-.dialog{
-width: 500px; 
-height: 530px;
- padding: 30px;
-
+.dialog-section {
+  padding: 30px; 
 }
-.head{
+
+.dialog-head {
   position: sticky;
   top: 0px;
   font-size: 20px;
-  font-weight: 500; 
+  font-weight: 500;
 }
-.buttons{
+
+.buttons {
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  margin-block: 10px;
 }
-.save_btn{
+
+.save_btn {
   margin-left: 10px;
 }
-.image_upload{
- margin-block: 20px;
-}
-.input_file{
+
+.input_file {
   position: absolute;
   opacity: 0;
   z-index: 1;
   height: 200px;
   width: 200px;
 }
-.images-upload{
+
+.images-upload {
   z-index: 0;
   opacity: 1;
   width: 200px;
   height: 200px;
 }
-.form-filed{
-display: flex;
-flex-direction: column;
-justify-content: center;
+
+.form-filed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

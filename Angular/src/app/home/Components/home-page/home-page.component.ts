@@ -7,14 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent { 
-  constructor(
-    private router: Router,
-  ){ 
-  }
-  ngOnInit(){
-
-  }
+  constructor(private router: Router){} 
   navigateTo(){
-    this.router.navigateByUrl('/products')
+    this.router.navigate(['/products'])
   }
 }

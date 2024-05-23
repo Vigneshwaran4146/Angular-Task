@@ -2,6 +2,8 @@ import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DialogComponent } from '../dialog/dialog.component';
+import { HttpService } from 'src/app/services/http.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-product-list-page',
@@ -10,94 +12,51 @@ import { DialogComponent } from '../dialog/dialog.component';
 })
 export class ProductListPageComponent {
   @ViewChild('noProducts') noProducts: TemplateRef<any> | undefined;
-  products=[
-    {
-       id:1,
-       name:"product-1",
-       price:"₹100.00",
-       image:"assets/sample.png"
-    },
-    {
-      id:1,
-      name:"product-2",
-      price:"₹200.00",
-      image:"assets/sample.png"
-   },
-   {
-    id:1,
-    name:"product-3",
-    price:"₹300.00",
-    image:"assets/giftframe.jpeg"
- },
- {
-  id:1,
-  name:"product-1",
-  price:"₹100.00",
-  image:"assets/sample.png"
-},
-{
- id:1,
- name:"product-2",
- price:"₹200.00",
- image:"assets/sample.png"
-},
-{
-id:1,
-name:"product-3",
-price:"₹300.00",
-image:"assets/giftframe.jpeg"
-},
-{
-  id:1,
-  name:"product-1",
-  price:"₹100.00",
-  image:"assets/sample.png"
-},
-{
- id:1,
- name:"product-2",
- price:"₹200.00",
- image:"assets/sample.png"
-},
-{
-id:1,
-name:"product-3",
-price:"₹300.00",
-image:"assets/giftframe.jpeg"
-},
-{
-  id:1,
-  name:"product-1",
-  price:"₹100.00",
-  image:"assets/sample.png"
-},
-{
- id:1,
- name:"product-2",
- price:"₹200.00",
- image:"assets/sample.png"
-},
-{
-id:1,
-name:"product-3",
-price:"₹300.00",
-image:"assets/giftframe.jpeg"
-}
-  ]
+  products: any
+  imagestore = 'http://localhost:3000'
+  snackBarDuration={duration:500}
   constructor(
     private router: Router,
-    private dialog: MatDialog
-  ){ 
+    private dialog: MatDialog,
+    private dataService: HttpService,
+    private snackBar :MatSnackBar
+  ) {
   }
-  ngOnInit(){
+  ngOnInit() {
+    //  this.products  =
+    this.getProductsData()
+  }
+  getProductsData() {
+    this.dataService.getProducts().subscribe((res: any) => {
+      this.products = res
+    }
+    );
+  }
+  navigateTo(page: string, id: any) {
+    console.log(page, id);
 
+    if (page == 'products')
+      this.router.navigate(['/products', id]);
+    else
+      this.router.navigate([page])
   }
-  navigateTo(page:string){
-    this.router.navigateByUrl('/'+page)
+  openDialog(operation: string, product: object): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data: { operation, product }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log("result of deleted", result);
+        this.getProductsData();
+        if(operation=='edit')this.snackBar.open('Update Product Detail Sucessfully','close',this.snackBarDuration)
+        else if(operation=='delete') this.snackBar.open('Product Delete Sucessfully','close',this.snackBarDuration)
+        else this.snackBar.open('Product Added Sucessfully','close',this.snackBarDuration)
+      }
+    });
   }
-  addProduct( option :string,template:string){
-    this.dialog.open(DialogComponent,{ 
+  openSnackBar(){
+    this.snackBar.open("asdf","ds",{
+      duration:5000
     })
-    
   }
 }

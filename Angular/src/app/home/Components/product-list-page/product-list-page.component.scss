@@ -1,67 +1,85 @@
+.product-list-section {
+  background-color: #c3a9ff;
+  height: 100%;
+}
 
-.top-Nav{
-  background-color:#6155b4; 
-  height: 30px; 
+.top-Nav {
+  background-color: #6155b4;
+  height: 30px;
   display: flex;
   justify-content: space-between;
   padding: 25px;
   position: sticky;
   top: 0px;
 }
-.all-products{
+
+.all-products {
   font-size: 30px;
   font-weight: 900;
 }
-.products-home{
+
+.products-home {
   width: 300px;
   display: flex;
   justify-content: space-between;
 }
-.product-image{  
-}
-.products{ 
+
+.products {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   padding: 30px;
-  gap: 40px; 
+  gap: 40px;
   background-color: #c3a9ff;
 }
-.price_name{
+
+.price_name {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.name{
+
+.name {
   font-size: 20px;
-  font-weight: 500; 
-  padding-block: 5px;
-  width: 100%;
-  display: flex;
-  justify-content: center; 
-}
-.price{
-  font-size: 15px;
-  font-weight: 300; 
+  font-weight: 500;
   padding-block: 5px;
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.single-products{
-  width: 200px;
-  height: 330px;
+
+.price {
+  font-size: 15px;
+  font-weight: 300;
+  padding-block: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.single-products {
   border: 1px black;
-  background-color: #ffffff;
+  background-color: #ffffff5e;
+  height: 420px;
+  
 }
-.product_not{
+.single-products:hover{ 
+  .price-name{
+    height: 74px;
+  }
+} 
+
+.product_not {
   font-size: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    height: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: cursive;
+  height: 500px;
 }
+
 .product-card {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -70,14 +88,10 @@
   transition: box-shadow 0.3s ease;
 
   &:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 9px 20px rgb(0 0 0 / 87%);
   }
 
-  .product-image {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+
 
   .product-details {
     padding: 16px;
@@ -96,16 +110,45 @@
     }
   }
 }
-.icons_button{
+.price-name{
+  height: 125px;
+  align-items: center;
+  justify-content: center;
   display: flex;
-  flex-direction: row; 
-  justify-content: space-evenly;
+  transition: height ease-in-out 0.4s;
+  flex-direction: column;
 }
-.details{
+.icons_button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
+.details {
   padding: 10px;
   width: 23%;
   color: white;
-  background-color: #4758b8;
   border: none;
   border-radius: 11px;
+}
+
+.product-image {
+  width: 250px;
+  height: 250px;
+  border: 2px solid;
+  border-radius: 50px;
+  overflow: hidden;
+  margin: 15px;
+}
+
+.view-details {
+  background-color: rgb(33 33 33 / 87%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+}
+
+.cake-icon {
+  color: white;
 }
