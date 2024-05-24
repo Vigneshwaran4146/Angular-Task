@@ -4,23 +4,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #c3a9ff;
 }
 
 .button {
-  display: table-cell;
+  display: flex;
+  flex-direction: column;
   max-width: 600px;
+  gap: 20px;
 }
 
 .arrow-right {
   visibility: hidden;
 }
 
-.button:hover {
-  .arrow { 
+.view-products:hover {
+  .arrow {
     visibility: hidden;
-  } 
-  .arrow-right { 
+  }
+
+  .arrow-right {
     visibility: visible;
   }
+}
+
+.mat-mdc-raised-button.mat-primary {
+  --mdc-protected-button-container-color: #894e3f;
 }

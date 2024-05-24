@@ -1,5 +1,5 @@
 .dialog-section {
-  padding: 30px; 
+  padding: 30px;
   padding-top: 0px;
   min-width: 285px;
   max-width: 360px;
@@ -47,17 +47,20 @@
   flex-direction: column;
   justify-content: center;
 }
-.mat-mdc-form-field{
+
+.mat-mdc-form-field {
   margin-block-end: 20px;
 }
-.delete-content{
+
+.delete-content {
   font-size: 20px;
-    font-weight: 500;
-    display: flex;
-    line-height: 1.3;
-    align-items: flex-end;
+  font-weight: 500;
+  display: flex;
+  line-height: 1.3;
+  align-items: flex-end;
 }
-.delete-image{
+
+.delete-image {
   display: flex;
   position: absolute;
   width: 135px;

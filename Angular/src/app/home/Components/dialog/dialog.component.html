@@ -26,22 +26,25 @@
         <input matInput formControlName="price" data-control="productName">
         <mat-error *ngIf="product?.get('price')?.hasError('pattern')">Product Price only allow Numbers</mat-error>
       </mat-form-field>
-      <mat-form-field color="primary"appearance="outline" >
+      <mat-form-field color="primary" appearance="outline">
         <mat-label>Description</mat-label>
         <textarea matInput formControlName="description"></textarea>
         <mat-error *ngIf="product?.get('description')?.hasError('required')"> Description is required </mat-error>
-        <mat-error *ngIf="product?.get('description')?.hasError('maxlength')"> Description  exceed max length </mat-error>
+        <mat-error *ngIf="product?.get('description')?.hasError('maxlength')"> Description exceed max length
+        </mat-error>
       </mat-form-field>
     </div>
   </form>
   <!--Conformation Dialog for Delete Product -->
   <div *ngIf="(data?.operation=='delete')" style="display: flex;">
     <img src="assets/sure.png" alt="conformation-image" height="200px" width="200px">
-    <div class="delete-content"> 
-    <div class="delete-image"><img [src]="'http://localhost:3000'+data?.product?.image" style="width: 139px;height: 139px;object-fit: cover;"></div>
+    <div class="delete-content">
+      <div class="delete-image"><img [src]="'http://localhost:3000'+data?.product?.image"
+          style="width: 139px;height: 139px;object-fit: cover;"></div>
       Are You Sure Want To Delete?
     </div>
   </div>
+  <!-- Buttons for add,deleete and edit  -->
   <div class="buttons">
     <button mat-raised-button
       (click)="dialogRef.close()">{{(data?.operation=='delete')?dialogChanges[2].cancel:dialogChanges[1].cancel

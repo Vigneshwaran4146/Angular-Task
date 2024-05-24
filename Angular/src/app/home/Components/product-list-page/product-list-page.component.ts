@@ -13,17 +13,22 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ProductListPageComponent {
   @ViewChild('noProducts') noProducts: TemplateRef<any> | undefined;
   products: any
+  currentColor = '#eec1ad'
   imagestore = 'http://localhost:3000'
-  snackBarDuration={duration:500}
+  snackBarDuration = { duration: 500 }
+
   constructor(
     private router: Router,
     private dialog: MatDialog,
     private dataService: HttpService,
-    private snackBar :MatSnackBar
+    private snackBar: MatSnackBar
   ) {
   }
   ngOnInit() {
-    //  this.products  =
+    this.dataService.data$.subscribe(data => {
+      if (data)
+        this.currentColor = data;
+    });
     this.getProductsData()
   }
   getProductsData() {
@@ -33,8 +38,6 @@ export class ProductListPageComponent {
     );
   }
   navigateTo(page: string, id: any) {
-    console.log(page, id);
-
     if (page == 'products')
       this.router.navigate(['/products', id]);
     else
@@ -45,18 +48,12 @@ export class ProductListPageComponent {
       data: { operation, product }
     });
     dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        console.log("result of deleted", result);
+      if (result) { 
         this.getProductsData();
-        if(operation=='edit')this.snackBar.open('Update Product Detail Sucessfully','close',this.snackBarDuration)
-        else if(operation=='delete') this.snackBar.open('Product Delete Sucessfully','close',this.snackBarDuration)
-        else this.snackBar.open('Product Added Sucessfully','close',this.snackBarDuration)
+        if (operation == 'edit') this.snackBar.open('Update Product Detail Sucessfully', 'close', this.snackBarDuration)
+        else if (operation == 'delete') this.snackBar.open('Product Delete Sucessfully', 'close', this.snackBarDuration)
+        else this.snackBar.open('Product Added Sucessfully', 'close', this.snackBarDuration)
       }
     });
-  }
-  openSnackBar(){
-    this.snackBar.open("asdf","ds",{
-      duration:5000
-    })
-  }
+  } 
 }

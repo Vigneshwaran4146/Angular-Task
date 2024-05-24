@@ -10,12 +10,17 @@ import { HttpService } from 'src/app/services/http.service';
 export class ProductDetailsPageComponent {
   singleProduct!: any
   imagestore = 'http://localhost:3000'
+  currentColor = '#eec1ad'
   constructor(
     private route: ActivatedRoute,
     private dataService: HttpService,
     private router: Router
   ) { }
   ngOnInit(): void {
+    this.dataService.data$.subscribe(data => {
+      if (data)
+        this.currentColor = data;
+    });
     const singleProductId = this.route.snapshot.paramMap.get('id')
     console.log(singleProductId)
     this.dataService.singleProduct(singleProductId).subscribe((response) => {

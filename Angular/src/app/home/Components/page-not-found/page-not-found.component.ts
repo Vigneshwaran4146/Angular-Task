@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-page-not-found',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./page-not-found.component.scss']
 })
 export class PageNotFoundComponent {
-
+  currentColor = '#eec1ad'
+  constructor(private dataService: HttpService) { }
+  ngOnInit() {
+    this.dataService.data$.subscribe(data => {
+      if (data)
+        this.currentColor = data;
+    });
+  }
 }

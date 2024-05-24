@@ -1,10 +1,22 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef, Input, OnChanges, Renderer2, SimpleChanges } from '@angular/core';
 
 @Directive({
   selector: '[appChangeBackground]'
 })
-export class ChangeBackgroundDirective {
+export class ChangeBackgroundDirective implements OnChanges {
 
-  constructor() { }
+  @Input('appChangeBackground') backgroundColor!: string;
+
+  constructor(private el: ElementRef, private renderer: Renderer2) { }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['backgroundColor']) {
+      this.changeBackgroundColor(this.backgroundColor);
+    }
+  }
+
+  private changeBackgroundColor(color: string) {
+    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', color);
+  }
 
 }

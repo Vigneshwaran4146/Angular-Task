@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 export interface product {
   id?: number;
   name: string;
@@ -12,6 +12,16 @@ export interface product {
 })
 export class HttpService {
   private apiUrl = 'http://localhost:3000/products';
+  private dataSubject = new BehaviorSubject<any>(null);
+  data$ = this.dataSubject.asObservable();
+
+  setData(data: string) {
+    this.dataSubject.next(data);
+  }
+
+  getData() {
+    return this.dataSubject.value;
+  }
 
   constructor(private http: HttpClient) { }
   /**

@@ -1,14 +1,17 @@
 .product-detail {
   display: flex;
   flex-direction: row;
-  width: 100%;
-  top: 45px;
+  // width: 100%;
+  top: 60px;
   position: relative;
+  border: 1px solid #590b0bd9;
+  margin-inline: 50px;
+  border-radius: 40px;
 }
 
 .image-side {
   padding: 20px;
-  width: 50%;
+  width: 40%;
   overflow: hidden;
   display: flex;
   justify-content: flex-end;
@@ -22,7 +25,7 @@
   padding: 10px;
   z-index: 4;
   width: 95%;
-  background-color: white;
+  // background-color: white;
 }
 
 .single-image {
@@ -67,41 +70,51 @@
   background-color: #471111c9 !important;
   color: white !important;
 }
-.productDescription{
+
+.productDescription {
   font-size: 17px;
-    font-weight: 500;
-    line-height: 1.5;
-    padding-block: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  padding-block: 18px;
 }
-.productPriceWord{
+
+.productPriceWord {
   font-size: 20px;
-    font-weight: 500;
-    color: black;
-    padding: 10px;
-    padding-top: 0px;
-    margin: 10px;
-    margin-top: 0px;
-    padding-left: 0px;
-    margin-left: 0px;
+  font-weight: 500;
+  color: black;
+  padding: 10px;
+  padding-top: 0px;
+  margin: 10px;
+  margin-top: 0px;
+  padding-left: 0px;
+  margin-left: 0px;
 }
+
 @media screen and (max-width:750px) {
-  
-  .product-detail{
+
+  .product-detail {
     flex-direction: column;
     justify-content: center;
     padding-left: 30px;
     width: 145%;
+    border: none;
+    margin: 0px;
+    border-radius: 0px;
+
   }
-  .single-image{
+
+  .single-image {
     width: 350px;
     height: 250px;
   }
-  .content-side{
+
+  .content-side {
     padding: 0px;
-    
+
   }
-  .productName{
-    padding:0px;
+
+  .productName {
+    padding: 0px;
     margin: 0px;
-    }
+  }
 }

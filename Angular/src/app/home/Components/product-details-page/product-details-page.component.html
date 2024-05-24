@@ -1,7 +1,7 @@
 <div class="backProducts">
-  <button mat-raised-button (click)="navigateTo('products')"><mat-icon>arrow_back</mat-icon>Back To Products</button>
+  <button mat-raised-button appChangeBackground="{{currentColor}}"(click)="navigateTo('products')"><mat-icon>arrow_back</mat-icon>Back To Products</button>
 </div>
-<div class="product-detail">
+<div class="product-detail" appChangeBackground="{{currentColor}}">
   <div class="image-side">
     <div class="single-image">
       <img [src]=" singleProduct?.image? imagestore+singleProduct?.image:'assets/noImage.jpg'" alt="productImage"
