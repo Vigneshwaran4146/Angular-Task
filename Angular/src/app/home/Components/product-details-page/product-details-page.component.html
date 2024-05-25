@@ -4,16 +4,16 @@
 <div class="product-detail" appChangeBackground="{{currentColor}}">
   <div class="image-side">
     <div class="single-image">
-      <img [src]=" singleProduct?.image? imagestore+singleProduct?.image:'assets/noImage.jpg'" alt="productImage"
+      <img [src]=" singleProduct.image? imageStore+singleProduct.image:'assets/noImage.jpg'" alt="productImage"
         width="100%" height="100%">
     </div>
   </div>
   <div class="content-side">
-    <div class="productName">{{singleProduct?.name | uppercase}}</div>
-    <div class="productPrice">{{singleProduct?.price |currency :'INR'}}</div>
-    <div class="productPriceWord">({{singleProduct?.price | numberToWords |titlecase}})</div>
+    <div class="productName">{{singleProduct.name | uppercase}}</div>
+    <div class="productPrice">{{singleProduct.price |currency :'INR'}}</div>
+    <div class="productPriceWord">{{singleProduct.price | numberToWords}}</div>
     <div *ngIf="singleProduct?.description" style="font-size: 20px; font-weight: bolder;">Description:</div>
-    <div class="productDescription">{{singleProduct?.description}}</div>
+    <div class="productDescription">{{singleProduct.description}}</div>
     <button mat-raised-button class="cartbtn"><mat-icon>shopping_cart</mat-icon>Add to Cart</button>
   </div>
 </div>

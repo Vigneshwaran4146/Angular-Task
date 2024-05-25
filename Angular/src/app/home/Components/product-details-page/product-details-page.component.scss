@@ -18,14 +18,14 @@
 }
 
 .backProducts {
-  margin-block: 10px;
-  margin-inline-start: 10px;
+  margin-block: 10px; 
   position: fixed;
   top: -13px;
   padding: 10px;
   z-index: 4;
-  width: 95%;
-  // background-color: white;
+  width: 100%;
+  margin-inline: 0px;
+  background-color: #c98276;
 }
 
 .single-image {
@@ -95,8 +95,7 @@
   .product-detail {
     flex-direction: column;
     justify-content: center;
-    padding-left: 30px;
-    width: 145%;
+    padding-left: 15px; 
     border: none;
     margin: 0px;
     border-radius: 0px;
@@ -105,16 +104,20 @@
 
   .single-image {
     width: 350px;
-    height: 250px;
+    height: 250px; 
   }
 
   .content-side {
     padding: 0px;
-
+    width: 100%;
   }
 
   .productName {
     padding: 0px;
     margin: 0px;
+  }
+  .image-side{
+    width: 85%;
+    justify-content: center;
   }
 }

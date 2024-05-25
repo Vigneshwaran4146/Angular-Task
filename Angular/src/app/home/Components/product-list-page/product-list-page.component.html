@@ -11,7 +11,7 @@
   <ng-container *ngIf="products?.length">
     <div class="products" appChangeBackground="{{currentColor}}">
       <div class="product-card single-products" *ngFor="let product of products">
-        <div class="product-image"><img [src]="product.image? imagestore+product.image:'assets/noImage.jpg'"
+        <div class="product-image"><img [src]="product.image? imageStore+product.image:'assets/noImage.jpg'"
             alt="{{product.image}}" style="width: 100%;height: 250px;object-fit: cover;"></div>
         <div class="product-details">
           <div class="price-name">

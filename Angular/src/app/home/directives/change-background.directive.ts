@@ -5,18 +5,19 @@ import { Directive, ElementRef, Input, OnChanges, Renderer2, SimpleChanges } fro
 })
 export class ChangeBackgroundDirective implements OnChanges {
 
+  // Input property to set the background color
   @Input('appChangeBackground') backgroundColor!: string;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
+  // Constructor with dependency injection of ElementRef and Renderer2
+  constructor(private elment: ElementRef, private renderer: Renderer2) { }
 
-  ngOnChanges(changes: SimpleChanges) {
+  /**
+   * Lifecycle hook ngOnChanges
+   * @param changes - The changes detected
+   */
+  ngOnChanges(changes: SimpleChanges): void {
     if (changes['backgroundColor']) {
-      this.changeBackgroundColor(this.backgroundColor);
+      this.renderer.setStyle(this.elment.nativeElement, 'backgroundColor', this.backgroundColor); 
     }
-  }
-
-  private changeBackgroundColor(color: string) {
-    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', color);
-  }
-
+  } 
 }
