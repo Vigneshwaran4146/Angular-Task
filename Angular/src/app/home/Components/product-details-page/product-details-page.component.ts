@@ -28,7 +28,7 @@ export class ProductDetailsPageComponent implements OnInit {
   };
 
   // Base URL for the image store
-  imageStore = 'http://localhost:3000';
+  imageStore: string= 'http://localhost:3000';
 
   // Variable to store the current color
   currentColor: string = '#eec1ad';

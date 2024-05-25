@@ -17,7 +17,7 @@ export class DialogComponent implements OnInit {
   file!: File;
 
   // Source for the image preview
-  imageSrc: any;
+  imageSrc!:string |ArrayBuffer|null;
 
   // Array containing dialog configurations for different operations
   dialogChanges: { dialogHeading: string, save: string, cancel: string }[] = [
