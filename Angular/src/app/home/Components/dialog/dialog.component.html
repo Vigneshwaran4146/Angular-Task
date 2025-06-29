@@ -9,7 +9,7 @@
       <div style="margin-block: 20px;">
         <div style=" display: flex;justify-content: center;">
           <img
-            [src]="imageSrc? imageSrc:data?.product?.image? 'http://localhost:3000'+data?.product?.image:'assets/upload1.png'"
+            [src]="imageSrc? imageSrc:data?.product?.image? 'https://express-backend-v421.onrender.com'+data?.product?.image:'assets/upload1.png'"
             class="images-upload" width="100%" height="100%">
           <input type="file" name="file" class="input_file" (change)="onFileChange($event)" />
         </div>
@@ -39,7 +39,7 @@
   <div *ngIf="(data?.operation=='delete')" style="display: flex;">
     <img src="assets/sure.png" alt="conformation-image" height="200px" width="200px">
     <div class="delete-content">
-      <div class="delete-image"><img [src]="'http://localhost:3000'+data?.product?.image"
+      <div class="delete-image"><img [src]="'https://express-backend-v421.onrender.com'+data?.product?.image"
           style="width: 139px;height: 139px;object-fit: cover;"></div>
       Are You Sure Want To Delete?
     </div>

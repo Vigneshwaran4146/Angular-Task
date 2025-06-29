@@ -21,7 +21,7 @@ export class ProductListPageComponent {
   currentColor: string = '#eec1ad';
 
   // Base URL for the image store
-  imageStore: string = 'http://localhost:3000';
+  imageStore: string = 'https://express-backend-v421.onrender.com';
 
   // Duration configuration for snackbar messages
   snackBarDuration = { duration: 500 };

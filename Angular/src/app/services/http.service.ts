@@ -13,7 +13,7 @@ export interface Product {
   providedIn: 'root'
 })
 export class HttpService {
-  private apiUrl = 'http://localhost:3000/products';
+  private apiUrl = 'https://express-backend-v421.onrender.com/products';
   
   // BehaviorSubject to emit and subscribe to data changes
   private dataSubject = new BehaviorSubject<string | null>(null);
